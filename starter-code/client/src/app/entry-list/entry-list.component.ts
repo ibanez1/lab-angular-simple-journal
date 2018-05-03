@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JournalServiceService } from '../services/journalService.service';
+import { Observable } from 'rxjs/Observable';
+
 
 @Component({
   selector: 'app-entry-list',
@@ -7,13 +9,11 @@ import { JournalServiceService } from '../services/journalService.service';
   styleUrls: ['./entry-list.component.css']
 })
 export class EntryListComponent implements OnInit {
-  response:any;
+  response$:Observable<any>;
   constructor(private journalService: JournalServiceService) {}
 
   ngOnInit() {
-   this.journalService.getJournal().subscribe(respuesta => {
-     return this.response = respuesta
-   })
+   this.response$ = this.journalService.getJournal()
   }
 
 }

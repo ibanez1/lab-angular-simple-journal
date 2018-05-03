@@ -3,9 +3,14 @@
 </p>
 
 <ul>
-  <li *ngFor = "let entry of respuesta">
+  <li *ngFor = "let entry of response$ | async">
     {{entry.title}}
     {{entry.date}}
-
+    <a [routerLink]="['/',entry._id]">
+      Go to Entry
+    </a>
   </li>
 </ul>
+
+
+<app-entry-form></app-entry-form>

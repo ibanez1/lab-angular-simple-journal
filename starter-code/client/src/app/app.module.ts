@@ -8,13 +8,17 @@ import { AppComponent } from './app.component';
 import { EntryListComponent } from './entry-list/entry-list.component';
 import { JournalServiceService } from './services/journalService.service';
 import { routes } from '../routes'
+import { SingleEntryComponent } from './single-entry/single-entry.component';
+import { EntryFormComponent } from './entry-form/entry-form.component';
 
 const routesA: Routes = routes;
 
 @NgModule({
   declarations: [
     AppComponent,
-    EntryListComponent
+    EntryListComponent,
+    SingleEntryComponent,
+    EntryFormComponent
 ],
   imports: [
     BrowserModule,

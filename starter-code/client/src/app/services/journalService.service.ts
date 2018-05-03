@@ -9,8 +9,19 @@ export class JournalServiceService {
 constructor(private http: Http) { }
 
 getJournal() {
-  return this.http.get('http://localhost3000/api/journal-entries')
+  return this.http.get('http://localhost:3000/api/journal-entries')
     .map((res) => res.json());
 }
+
+getOneJournal(id) {
+  return this.http.get(`http://localhost:3000/api/journal-entries/${id}`)
+  .map((res) => res.json());
+}
+
+saveComment(title,content){
+  return this.http.post('http://localhost:3000/api/journal-entries',{title,content})
+  .map((res) => res.json());
+}
+
 
 }

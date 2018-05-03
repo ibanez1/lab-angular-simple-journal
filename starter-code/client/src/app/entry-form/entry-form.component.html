@@ -1,0 +1,17 @@
+<p>
+  entry-form works!
+</p>
+
+<!-- <form action="">
+  <label for=""> </label>
+  <input type="text">
+
+  <label for=""></label>
+  <textarea name="" id="" cols="30" rows="10"></textarea>
+</form> -->
+
+<form (ngSubmit)="postComment(myForm)" #myForm="ngForm" >
+    <input name="title" placeholder="title" ngModel>
+    <textarea name="content" id="content" cols="30" rows="10" ngModel></textarea>
+    <button>Comment</button>
+</form>
